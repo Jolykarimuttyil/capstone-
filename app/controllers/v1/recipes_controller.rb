@@ -7,11 +7,15 @@ class V1::RecipesController < ApplicationController
   end
 
   def create 
+    # render json: {message: "test", params: params}
     recipe = Recipe.new(
       name: params[:name],
       user_id: current_user.id
       )
     if recipe.save
+      # params[:ingredients].
+      Ingredient.create(params[:ingredients].map {|ingredient| {recipe_id: recipe.id, name: ingredient}})
+      Direction.create(params[:directions].each_with_index.map {|direction, i| {recipe_id: recipe.id, text: direction, order: i + 1}})
       render json: recipe.as_json
     else
       render json: {errors: recipe.errors.full_messages  }, status:  :unprocessable_entity

@@ -1,12 +1,12 @@
 class V1::FridgeItemsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: [:index, :show,]
   def index
-    fridge_items = Fridge_item.all
+    fridge_items = FridgeItem.all
     render json: fridge_item.as_json
   end
 
   def create 
-    fridge_item = Fridge_item.new(
+    fridge_item = FridgeItem.new(
       name: params[:name],
       user_id: current_user.id
       )
