@@ -1033,25 +1033,19 @@
                 <input type="submit" value="Search" />
               </div>
             </div>
-            <div class="right">
-              <div class="ingredients">
-                <h3>Do you also have?</h3>
-                <a href="#" class="button gold">Olive oil</a><a href="#" class="button gold">Parsley</a><a href="#" class="button gold">Tomato</a><a href="#" class="button gold">Olive oil</a><a href="#" class="button gold">Parsley</a><a href="#" class="button gold">Tomato</a><a href="#" class="button gold">Parsley</a><a href="#" class="button gold">Tomato</a><a href="#" class="button gold">Olive oil</a><a href="#" class="button gold">Parsley</a><a href="#" class="button gold">Tomato</a>
-              </div>
-            </div>
           </div>
           <!--//recipefinder-->
         
           <!--results-->
           <div class="entries row">
             <!--item-->
-            <div class="entry one-fourth">
+            <div class="entry one-fourth" v-for="recipe in recipes">
               <figure>
                 <img src="images/img6.jpg" alt="" />
                 <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
               </figure>
               <div class="container">
-                <h2><a href="recipe.html">Thai fried rice with fruit and vegetables</a></h2> 
+                <h2><a href="recipe.html">{{recipe.name}}</a></h2> 
                 <div class="actions">
                   <div>
                     <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>

@@ -151,11 +151,12 @@ var RecipesSearchPage = {
   template: "#recipes-search-page",
   data: function() {
     return {
+      recipes: [],
     
     };
   },
   created: function() {
-    axios.get("/v1/recipes").then(
+    axios.get("/v1/recipes_search").then(
       function(response) {
         this.recipes = response.data;
       }.bind(this)

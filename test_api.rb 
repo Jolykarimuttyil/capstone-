@@ -1,16 +1,16 @@
-require "unirest"
-system "clear"
-puts "Welcome to the Weather app! "
-print "Enter a city: "
-input_city = gets.chomp
-print "Enter a state: "
-input_state = gets.chomp
+# require "unirest"
+# system "clear"
+# puts "Welcome to the Weather app! "
+# print "Enter a city: "
+# input_city = gets.chomp
+# print "Enter a state: "
+# input_state = gets.chomp
 
 response = Unirest.get("https://api.edamam.com/search?q=chicken&app_id=c2e953ab&app_key=28bae3bac65b4eb1f5e5a7ab4989ae11&from=0&to=3&calories=591-722&health=alcohol-free")
 # temperature = response.body["query"]["results"]["channel"]["item"]["condition"]["temp"]
- condition = response.body["query"]["results"]["channel"]["item"]["condition"]["text"]
+#  condition = response.body["query"]["results"]["channel"]["item"]["condition"]["text"]
 
-puts "Today in #{input_city} it is #{temperature} degrees and {condition} outside."
+# puts "Today in #{input_city} it is #{temperature} degrees and {condition} outside."
 
 recipes = response.body
 

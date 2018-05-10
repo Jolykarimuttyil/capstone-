@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "/recipes/:id" => "recipes#show"
     patch "/recipes/:id" => "recipes#update"
     delete "/recipes/:id" => "recipes#destroy"
+    get '/recipes_search' => "recipes#api_search"
 
     get 'directions' => 'directions#index'
     post "/directions" => "directions#create"
