@@ -1041,12 +1041,15 @@
             <div class="entry one-fourth" v-for="recipe in recipes">
               <figure>
                 <img v-bind:src="recipe.recipe.image" alt="" />
-                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                <!-- <figcaption><a v-bind:href="'/#/recipes_show?recipe_url=' + recipe.recipe.uri"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption> -->
+                <figcaption><a v-on:click="viewRecipe(recipe)"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
               </figure>
               <div class="container">
-                <h2><a href="recipe.html">{{recipe.recipe.label}}</a></h2> 
+                <h2><a href="http://localhost:3000/#/recipes_show">{{recipe.recipe.label}}</a></h2> 
+
                 <div class="actions">
                   <div>
+                    <a href="#" class="btn btn-primary" v-on:click="setCurrentRecipe(recipe)" data-toggle="modal" data-target="#exampleModal">More info</a>
                     <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
                     <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
                     <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
@@ -1054,6 +1057,7 @@
                 </div>
               </div>
             </div>
+
             <!--item-->
             <div class="quicklinks">
               <a href="#" class="button">More recipes</a>
@@ -1091,7 +1095,7 @@
       <!--row-->
       <div class="row">
         <header class="s-title">
-          <h1 v-for="recipe in recipes">{{recipe.recipe.label}}</h1>
+          <h1>{{recipe.recipe.label}}</h1>
         </header>
         <!--content-->
         <section class="content three-fourth">

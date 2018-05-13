@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   namespace :v1 do
     get 'recipes' => 'recipes#index'
     post "/recipes" => "recipes#create"
-    get "/recipes/:id" => "recipes#show"
+    get "/recipes_show" => "recipes#show"
     patch "/recipes/:id" => "recipes#update"
     delete "/recipes/:id" => "recipes#destroy"
     get '/recipes_search' => "recipes#api_search"
-   
+
 
     get 'directions' => 'directions#index'
     post "/directions" => "directions#create"

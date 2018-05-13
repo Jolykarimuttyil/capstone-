@@ -23,8 +23,24 @@ class V1::RecipesController < ApplicationController
   end 
 
   def show
-    recipe = Recipe.find_by(id: params[:id])
+    # recipe = Recipe.find_by(id: params[:id])
+
+    # render json: recipe.as_json
+    # render json: {recipe_id: params[:recipe_url]}
+
+    # uri = URI.encode "http://www.edamam.com/ontologies/edamam.owl#recipe_c17944a7af0decc2f627246b0bb24d8a", /\W/
+    uri = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408"
+
+    puts "-" * 40
+    p uri
+    puts "-" * 40
+
+    url = "https://api.edamam.com/r=#{uri}&app_id=c2e953ab&app_key=28bae3bac65b4eb1f5e5a7ab4989ae11"
+
+    response =  Unirest.get(url)
+    recipe = response.body
     render json: recipe.as_json
+
   end 
 
   def api_search

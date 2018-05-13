@@ -150,15 +150,20 @@ var RecipesShowPage = {
   template: "#recipes-show-page",
   data: function() {
     return {
-      recipes: [],
+      recipe: {},
+
     };
   },
   created: function() {
-    axios.get("/v1//recipes/:id").then(
-      function(response) {
-        this.recipes = response.data;
-      }.bind(this)
-    );
+    console.log("RecipesShowPage created")
+    // axios.get("/v1/recipes_show?recipe_url=" + this.$route.query.recipe_url).then(
+    //   function(response) {
+    //     this.recipe = response.data;
+    //     console.log(this.recipe);
+    //   }.bind(this)
+    // );
+    this.recipe = JSON.parse(localStorage.getItem("recipe"));
+    console.log('recipe', this.recipe);
   },
   methods: {},
   computed: {}
@@ -176,11 +181,19 @@ var RecipesSearchPage = {
       diet_restrictions: "",
       max_ingredients: null,
       excluded: "",
+      currentRecipe: {},
       
     };
   },
   created: function() {},
   methods: {
+    viewRecipe: function(recipe) {
+      localStorage.setItem('recipe', JSON.stringify(recipe));
+      router.push("/recipes_show");
+    },
+    setCurrentRecipe: function(inputRecipe) {
+      this.currentRecipe = inputRecipe;
+    },
     submit: function() {
       var params = {
         ingredients: this.ingredients,
@@ -200,8 +213,9 @@ var RecipesSearchPage = {
         }.bind(this));
     }
 
-  }
+  },
 };
+
 
 
 
@@ -216,7 +230,7 @@ var router = new VueRouter({
     { path: "/recipes", component: RecipesIndexPage },
     { path: "/recipes_show", component: RecipesShowPage },
     { path: "/create_recipes", component: RecipesCreatePage},
-    { path: "/login", component: LoginPage },
+    { path: "/login", cxomponent: LoginPage },
     { path: "/logout", component: LogoutPage },
     { path: "/fridge_create", component: FridgeItemCreatePage},
     { path: "/fridge_index", component: FridgeIndexPage },
