@@ -146,17 +146,15 @@ var FridgeIndexPage = {
   computed: {}
 };
 
-
-var RecipesSearchPage = {
-  template: "#recipes-search-page",
+var RecipesShowPage = {
+  template: "#recipes-show-page",
   data: function() {
     return {
       recipes: [],
-    
     };
   },
   created: function() {
-    axios.get("/v1/recipes_search").then(
+    axios.get("/v1//recipes/:id").then(
       function(response) {
         this.recipes = response.data;
       }.bind(this)
@@ -165,6 +163,46 @@ var RecipesSearchPage = {
   methods: {},
   computed: {}
 };
+
+
+var RecipesSearchPage = {
+  template: "#recipes-search-page",
+  data: function() {
+    return {
+      recipes:[],
+      ingredients: "",
+      min_calories: null,
+      max_calories: null,
+      diet_restrictions: "",
+      max_ingredients: null,
+      excluded: "",
+      
+    };
+  },
+  created: function() {},
+  methods: {
+    submit: function() {
+      var params = {
+        ingredients: this.ingredients,
+        min_calories: this.min_calories || 200,
+        max_calories: this.max_calories || 1000,
+        max_ingredients: this.max_ingredients || 50,
+        excluded: this.excluded 
+      };
+      if (this.diet_restrictions) {
+        params.diet_restrictions = this.diet_restrictions;
+      }
+      axios
+        .get("/v1/recipes_search", {params: params})
+        .then(function(response) {
+          console.log('search response', response.data);
+          this.recipes = response.data.hits;
+        }.bind(this));
+    }
+
+  }
+};
+
 
 
 
@@ -176,12 +214,13 @@ var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
     { path: "/recipes", component: RecipesIndexPage },
-    { path: "/create-recipes", component: RecipesCreatePage},
+    { path: "/recipes_show", component: RecipesShowPage },
+    { path: "/create_recipes", component: RecipesCreatePage},
     { path: "/login", component: LoginPage },
     { path: "/logout", component: LogoutPage },
-    { path: "/fridge-create", component: FridgeItemCreatePage},
-    { path: "/fridge-index", component: FridgeIndexPage },
-    { path: "/recipe-search", component: RecipesSearchPage }
+    { path: "/fridge_create", component: FridgeItemCreatePage},
+    { path: "/fridge_index", component: FridgeIndexPage },
+    { path: "/recipes_search", component: RecipesSearchPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

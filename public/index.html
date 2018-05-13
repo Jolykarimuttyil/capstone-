@@ -1019,18 +1019,17 @@
           <!--recipefinder-->
           <div class="container recipefinder">
             <div class="left">
-              <h3>Search by ingredients</h3>
-              <p>Click the ‘-’ to remove an ingredient, or click the ingredient itself to emphasize</p>
-              <div class="f-row">
-                <input type="text" placeholder="Add ingredients (one at a time)" />
-                <button class="add">+</button>
-              </div>
-              <div class="f-row">
-                <input type="text" value="garlic" />
-                <button class="remove">-</button>
-              </div>
-              <div class="f-row">
-                <input type="submit" value="Search" />
+             <h3>Search for recipes by ingredients</h3>
+              <div class="row">
+                <div class="search one-whole">
+                  <input type="search" placeholder="Place ingredients here" v-model="ingredients" />
+                  <input type="search" placeholder="Calories Min per serving" v-model="min_calories"/>
+                  <input type="search" placeholder="Calories Max per serving" v-model="max_calories" />
+                  <input type="search" placeholder="Number of ingredients" v-model="max_ingredients" />
+                  <input type="search" placeholder="exclude ingredients" v-model="excluded" />
+                  <input type="search" placeholder="Diet restrictions" />
+                  <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+                </div>
               </div>
             </div>
           </div>
@@ -1041,11 +1040,11 @@
             <!--item-->
             <div class="entry one-fourth" v-for="recipe in recipes">
               <figure>
-                <img src="images/img6.jpg" alt="" />
+                <img v-bind:src="recipe.recipe.image" alt="" />
                 <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
               </figure>
               <div class="container">
-                <h2><a href="recipe.html">{{recipe.name}}</a></h2> 
+                <h2><a href="recipe.html">{{recipe.recipe.label}}</a></h2> 
                 <div class="actions">
                   <div>
                     <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
@@ -1070,4 +1069,144 @@
     <!--//wrap-->
   </main>
   <!--//main-->
+</template>
+
+<template id="recipes-show-page">
+
+  <!--main-->
+  <main class="main" role="main">
+    <!--wrap-->
+    <div class="wrap clearfix">
+      <!--breadcrumbs-->
+      <nav class="breadcrumbs">
+        <ul>
+          <li><a href="index.html" title="Home">Home</a></li>
+          <li><a href="#" title="Recipes">Recipes</a></li>
+          <li><a href="recipes.html" title="Cocktails">Deserts</a></li>
+          <li>Recipe</li>
+        </ul>
+      </nav>
+      <!--//breadcrumbs-->
+      
+      <!--row-->
+      <div class="row">
+        <header class="s-title">
+          <h1 v-for="recipe in recipes">{{recipe.recipe.label}}</h1>
+        </header>
+        <!--content-->
+        <section class="content three-fourth">
+          <!--recipe-->
+            <div class="recipe">
+              <div class="row">
+                <!--two-third-->
+                <article class="two-third">
+                  <div class="image"><a href="#"><img src="images/img.jpg" alt="" /></a></div>
+                  <div class="intro"><p><strong>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas</strong></p> <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p></div>
+                  <div class="instructions">
+                    <ol>
+                      <li>Heat oven to 160C/140C fan/gas 3 and line a 12-hole muffin tin with cases. Gently melt the butter, chocolate, sugar and 100ml hot water together in a large saucepan, stirring occasionally, then set aside to cool a little while you weigh the other ingredients.</li>
+                      <li>Stir the eggs and vanilla into the chocolate mixture. Put the flour into a large mixing bowl, then stir in the chocolate mixture until smooth. Spoon into cases until just over three-quarters full (you may have a little mixture leftover), then set aside for 5 mins before putting on a low shelf in the oven and baking for 20-22 mins. Leave to cool.</li>
+                      <li>For the icing, melt the chocolate in a heatproof bowl over a pan of barely simmering water. Once melted, turn off the heat, stir in the double cream and sift in the icing sugar. When spreadable, top each cake with some and decorate with your favourite sprinkles and sweets.</li>
+                    </ol>
+                  </div>
+                </article>
+                <!--//two-third-->
+                
+                <!--one-third-->
+                <article class="one-third">
+                  <dl class="basic">
+                    <dt>Preparation time</dt>
+                    <dd>15 mins</dd>
+                    <dt>Cooking time</dt>
+                    <dd>30 mins</dd>
+                    <dt>Difficulty</dt>
+                    <dd>easy</dd>
+                    <dt>Serves</dt>
+                    <dd>4 people</dd>
+                  </dl>
+                  
+                  <dl class="user">
+                    <dt>Category</dt>
+                    <dd>Deserts</dd>
+                    <dt>Posted by</dt>
+                    <dd>Jennifer W.</dd>
+                  </dl>
+                  
+                  <dl class="ingredients">
+                    <dt>300g</dt>
+                    <dd>Self-raising flour</dd>
+                    <dt>200g</dt>
+                    <dd>Butter</dd>
+                    <dt>200g</dt>
+                    <dd>Plain chocolate</dd>
+                    <dt>2</dt>
+                    <dd>Eggs</dd>
+                    <dt>1 tbsp</dt>
+                    <dd>Vanilla extract</dd>
+                    <dt>200 g</dt>
+                    <dd>Brown sugar</dd>
+                    <dt>100 ml</dt>
+                    <dd>Double cream</dd>
+                    <dt>handful</dt>
+                    <dd>Sprinkles</dd>
+                  </dl>
+                </article>
+                <!--//one-third-->
+              </div>
+            </div>
+            <!--//recipe-->
+              
+           
+        <!--//content-->
+        
+        <!--right sidebar-->
+        <aside class="sidebar one-fourth">
+          <div class="widget nutrition">
+            <h3>Nutrition facts <span>(per serving)</span></h3>
+            <table>
+              <tr>
+                <td>Calories </td>
+                <td>505</td>
+              </tr>
+              <tr>
+                <td>Protein</td>
+                <td>59g</td>
+              </tr>
+              <tr>
+                <td>Carbs</td>
+                <td>59g</td>
+              </tr>
+              <tr>
+                <td>Fat</td>
+                <td>29g</td>
+              </tr>
+              <tr>
+                <td>Saturates</td>
+                <td>17g</td>
+              </tr>
+              <tr>
+                <td>Fibre</td>
+                <td>2g</td>
+              </tr>
+              <tr>
+                <td>Sugar</td>
+                <td>44g</td>
+              </tr>
+              <tr>
+                <td>Salt</td>
+                <td>0.51g</td>
+              </tr>
+            </table>
+          </div>
+          
+        </aside>
+        <!--//right sidebar-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//wrap-->
+  </main>
+  <!--//main-->
+
+
 </template>
