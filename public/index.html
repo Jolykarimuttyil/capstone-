@@ -1104,27 +1104,13 @@
               <div class="row">
                 <!--two-third-->
                 <article class="two-third">
-                  <div class="image"><a href="#"><img src="images/img.jpg" alt="" /></a></div>
-                  <div class="intro"><p><strong>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas</strong></p> <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p></div>
-                  <div class="instructions">
-                    <ol>
-                      <li>Heat oven to 160C/140C fan/gas 3 and line a 12-hole muffin tin with cases. Gently melt the butter, chocolate, sugar and 100ml hot water together in a large saucepan, stirring occasionally, then set aside to cool a little while you weigh the other ingredients.</li>
-                      <li>Stir the eggs and vanilla into the chocolate mixture. Put the flour into a large mixing bowl, then stir in the chocolate mixture until smooth. Spoon into cases until just over three-quarters full (you may have a little mixture leftover), then set aside for 5 mins before putting on a low shelf in the oven and baking for 20-22 mins. Leave to cool.</li>
-                      <li>For the icing, melt the chocolate in a heatproof bowl over a pan of barely simmering water. Once melted, turn off the heat, stir in the double cream and sift in the icing sugar. When spreadable, top each cake with some and decorate with your favourite sprinkles and sweets.</li>
-                    </ol>
-                  </div>
+                  <div class="image">   <img v-bind:src="recipe.recipe.image" alt="" /> </div>
                 </article>
                 <!--//two-third-->
-                
+              <h2> For directions to refer to this page <a>{{recipe.recipe.url}} </h2></a>
+
                 <!--one-third-->
                 <article class="one-third">
-                  <dl class="basic">
-                    <dt>Preparation time</dt>
-                    <dd>15 mins</dd>
-                    <dt>Cooking time</dt>
-                    <dd>30 mins</dd>
-                    <dt>Difficulty</dt>
-                    <dd>easy</dd>
                     <dt>Serves</dt>
                     <dd>4 people</dd>
                   </dl>
@@ -1138,7 +1124,8 @@
                   
                   <dl class="ingredients">
                     <dt>300g</dt>
-                    <dd>Self-raising flour</dd>
+                    <dd>{{recipe.recipe.ingredients[0]}}
+</dd>
                     <dt>200g</dt>
                     <dd>Butter</dd>
                     <dt>200g</dt>
