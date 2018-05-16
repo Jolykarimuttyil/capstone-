@@ -17,6 +17,15 @@
   <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
   <script src="https://use.fontawesome.com/e808bf9397.js"></script>
   <link rel="shortcut icon" href="images/favicon.ico" />
+
+  <style>
+  .truncate {
+    width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  </style>
 </head>
 <body>
   <div id="vue-app">
@@ -30,49 +39,24 @@
     <header class="head" role="banner">
       <!--wrap-->
       <div class="wrap clearfix">
-        <a href="index.html" title="SocialChef" class="logo"><img src="images/ico/logo.png" alt="SocialChef logo" /></a>
-        
+        <a href="http://localhost:3000/#/" title="CookMore" class="logo"><img src="images/ico/logo.png" alt="SocialChef logo" /></a>
         <nav class="main-nav" role="navigation" id="menu">
-          <ul>
-            <li><a href="index.html" title="Home"><span>Home</span></a></li>
-            <li class="current-menu-item"><a href="recipes.html" title="Recipes"><span>Recipes</span></a>
-              <ul>
-                <li><a href="recipes2.html" title="Recipes 2">Recipes 2</a></li><li><a href="recipe.html" title="Recipe">Recipe</a></li>
-              </ul>
-            </li>
-            <li><a href="blog.html" title="Blog"><span>Blog</span></a>
-              <ul>
-                <li><a href="blog_single.html" title="Blog post">Blog post</a></li>
-              </ul>
-            </li>
-            <li><a href="#" title="Pages"><span>Pages</span></a>
-              <ul>
-                <li><a href="left_sidebar.html" title="Left sidebar page">Left sidebar page</a></li>
-                <li><a href="right_sidebar.html" title="Right sidebar page">Right sidebar page</a></li>
-                <li><a href="two_sidebars.html" title="Both sidebars page">Both sidebars page</a></li>
-                <li><a href="full_width.html" title="Full width page">Full width page</a></li>
-                <li><a href="login.html" title="Login page">Login page</a></li><li><a href="register.html" title="Register page">Register page</a></li>
-                <li><a href="error404.html" title="Error page">Error page</a></li>
-              </ul>
-            </li>
-            <li><a href="#" title="Features"><span>Features</span></a>
-              <ul>
-                <li><a href="icons.html" title="Icons">Icons</a></li>
-                <li><a href="grid.html" title="Grid">Grid</a></li>
-                <li><a href="shortcodes.html" title="Shortcodes">Shortcodes</a></li>
-                <li><a href="pricing.html" title="Pricing tables">Pricing tables</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html" title="Contact"><span>Contact</span></a></li>
-            <li><a href="http://themeforest.net/item/socialchef-social-recipe-html-template/8568727?ref=themeenergy" title="Buy now"><span>Buy now</span></a></li>
-          </ul>
-        </nav>
+        <ul>
+          <li><a href="http://localhost:3000/#/login" title="Login"><span>Login</span></a></li>
+          <li><a href="recipes.html" title="Signup"><span>Sign Up</span></a>   
+          </li>
+          <li><a href="http://localhost:3000/#/logout" title="Logout"><span>Logout</span></a>
+          </li>
+          </nav>
+        
+        
+    
         
         <nav class="user-nav" role="navigation">
           <ul>
-            <li class="light"><a href="find_recipe.html" title="Search for recipes"><i class="icon icon-themeenergy_search"></i> <span>Search for recipes</span></a></li>
-            <li class="medium"><a href="my_profile.html" title="My account"><i class="icon icon-themeenergy_chef-hat"></i> <span>My account</span></a></li>
-            <li class="dark"><a href="submit_recipe.html" title="Submit a recipe"><i class="icon icon-themeenergy_fork-spoon"></i> <span>Submit a recipe</span></a></li>
+            <li class="light"><a href="http://localhost:3000/#/recipes_search" title="Search for recipes"><i class="icon icon-themeenergy_search"></i> <span>Search for recipes</span></a></li>
+            
+            <li class="dark"><a href="http://localhost:3000/#/create_recipes" title="Submit a recipe"><i class="icon icon-themeenergy_fork-spoon"></i> <span>Submit a recipe</span></a></li>
           </ul>
         </nav>
       </div>
@@ -86,8 +70,8 @@
       <div class="wrap clearfix">
         <div class="row">
           <article class="one-half">
-            <h5>About SocialChef Community</h5>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+            <h5>About CookMore Community</h5>
+            <p>Cooking more at home makes for a happier families</p>
           </article>
           <article class="one-fourth">
             <h5>Need help?</h5>
@@ -109,18 +93,7 @@
           </article>
           
           <div class="bottom">
-            <p class="copy">Copyright 2016 SocialChef. All rights reserved</p>
-            
-            <nav class="foot-nav">
-              <ul>
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li><a href="recipes.html" title="Recipes">Recipes</a></li>
-                <li><a href="blog.html" title="Blog">Blog</a></li>
-                <li><a href="contact.html" title="Contact">Contact</a></li>    
-                <li><a href="find_recipe.html" title="Search for recipes">Search for recipes</a></li>
-                <li><a href="login.html" title="Login">Login</a></li> <li><a href="register.html" title="Register">Register</a></li>                          
-              </ul>
-            </nav>
+            <p class="copy">Copyright 2018 CookMore. All rights reserved</p>
           </div>
         </div>
       </div>
@@ -152,39 +125,6 @@
               <h1>Welcome to Cook More!</h1>
               <h2>Cooking Made Easier</h2>
             </article>
-            
-            <!--search recipes widget-->
-            <div class="one-fourth">
-              <div class="widget container">
-                <div class="textwrap">
-                  <h3>Search for recipes</h3>
-                  <p>All you need to do is enter an igredient, a dish or a keyword. </p>
-                  <p>You can also select a specific category from the dropdown.</p>
-                  <p>There’s sure to be something tempting for you to try.</p> 
-                  <p>Enjoy!</p>
-                </div>
-                <form action="find_recipe.html">
-                  <div class="f-row">
-                    <input type="text" placeholder="Enter your search term" />
-                  </div>
-                  <div class="f-row">
-                    <select>
-                      <option>or select a category</option>
-                      <option>Apetizers</option>
-                      <option>Cocktails</option>
-                      <option>Deserts</option>
-                      <option>Main courses</option>
-                      <option>Snacks</option>
-                      <option>Soups</option>
-                    </select>
-                  </div>
-                  <div class="f-row bwrap">
-                    <input type="submit" value="Start cooking!" />
-                  </div>
-                </form>
-              </div>
-            </div>
-            <!--//search recipes widget-->
           </div>
           <!--//row-->
         </div>
@@ -192,464 +132,7 @@
       </div>
       <!--//intro-->
       
-      <!--wrap-->
-      <div class="wrap clearfix">
-        <!--row-->
-        <div class="row">
-          <!--content-->
-          <section class="content full-width">
-            <div class="icons dynamic-numbers">
-              <header class="s-title">
-                <h2 class="ribbon large">SocialChef in numbers</h2>
-              </header>
-              
-              <!--row-->
-              <div class="row">
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_chef-hat"></i>
-                    <span class="title dynamic-number" data-dnumber="1730">0</span>
-                    <span class="subtitle">members</span>
-                  </div>
-                </div>
-                <!--//item-->
-                
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_pan"></i>
-                    <span class="title dynamic-number" data-dnumber="1250">0</span>
-                    <span class="subtitle">recipes</span>
-                  </div>
-                </div>
-                <!--//item-->
-                
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_image"></i>
-                    <span class="title dynamic-number" data-dnumber="5300">0</span>
-                    <span class="subtitle">photos</span>
-                  </div>
-                </div>
-                <!--//item-->
-                
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_pencil"></i>
-                    <span class="title dynamic-number" data-dnumber="2300">0</span>
-                    <span class="subtitle">forum posts</span>
-                  </div>
-                </div>
-                <!--//item-->
-                
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_chat-bubbles"></i>
-                    <span class="title dynamic-number" data-dnumber="7400">0</span>
-                    <span class="subtitle">comments</span>
-                  </div>
-                </div>
-                <!--//item-->
-                
-                <!--item-->
-                <div class="one-sixth">
-                  <div class="container">
-                    <i class="icon icon-themeenergy_stars"></i>
-                    <span class="title dynamic-number" data-dnumber="1700">0</span>
-                    <span class="subtitle">articles</span>
-                  </div>
-                </div>
-                <!--//item-->
-              
-                <div class="cta">
-                  <a href="login.html" class="button big">Join us!</a>
-                </div>
-              </div>
-              <!--//row-->
-            </div>
-          </section>
-          <!--//content-->
-        
-          <!--content-->
-          <section class="content three-fourth">
-            <!--cwrap-->
-            <div class="cwrap">
-              <!--entries-->
-              <div class="entries row">
-                <!--featured recipe-->
-                <div class="featured two-third">
-                  <header class="s-title">
-                    <h2 class="ribbon">Recipe of the Day</h2>
-                  </header>
-                  <article class="entry">
-                    <figure>
-                      <img src="images/img.jpg" alt="" />
-                      <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                    </figure>
-                    <div class="container">
-                      <h2><a href="recipe.html">Honey Cake</a></h2>
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-                      <div class="actions">
-                        <div>
-                          <a href="#" class="button">See the full recipe</a>
-                          <div class="more"><a href="recipes2.html">See past recipes of the day</a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!--//featured recipe-->
-                
-                <!--featured member-->
-                <div class="featured one-third">
-                  <header class="s-title">
-                    <h2 class="ribbon star">Featured member</h2>
-                  </header>
-                  <article class="entry">
-                    <figure>
-                      <img src="images/avatar.jpg" alt="" />
-                      <figcaption><a href="my_profile.html"><i class="icon icon-themeenergy_eye2"></i> <span>View member</span></a></figcaption>
-                    </figure>
-                    <div class="container">
-                      <h2><a href="my_profile.html">Kimberly C.</a></h2>
-                      <blockquote><i class="fa fa-quote-left"></i>Traditional dishes and fine bakery products accompanied by beautiful photographs to bend around and attract the tryout! Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</blockquote>
-                      <div class="actions">
-                        <div>
-                          <a href="#" class="button">Check out her recipes</a>
-                          <div class="more"><a href="#">See past featured members</a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <!--//featured member-->
-              </div>
-              <!--//entries-->
-            </div>
-            <!--//cwrap-->
-          
-            <!--cwrap-->
-            <div class="cwrap">
-              <header class="s-title">
-                <h2 class="ribbon bright">Latest recipes</h2>
-              </header>
-              
-              <!--entries-->
-              <div class="entries row">
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Thai fried rice with fruit and vegetables</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Spicy Morroccan prawns with cherry tomatoes</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-hard"></i><a href="#">hard</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Super easy blueberry cheesecake</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-easy"></i><a href="#">easy</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Refreshing banana split with a twist for adults</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-hard"></i><a href="#">hard</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Sushi mania: this is the best sushi you have ever tasted</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-easy"></i><a href="#">easy</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="recipe.html">Princess puffs - an old classic at its best</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="difficulty"><i class="ico i-hard"></i><a href="#">hard</a></div>
-                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <div class="quicklinks">
-                  <a href="#" class="button">More recipes</a>
-                  <a href="javascript:void(0)" class="button scroll-to-top">Back to top</a>
-                </div>
-              </div>
-              <!--//entries-->
-            </div>
-            <!--//cwrap-->
-          
-            <!--cwrap-->
-            <div class="cwrap">
-              <header class="s-title">
-                <h2 class="ribbon bright">Latest articles</h2>
-              </header>
-              <!--entries-->
-              <div class="entries row">
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="blog_single.html">Barbeque party</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="blog_single.html#comments">27</a></div>
-                      </div>
-                    </div>
-                    <div class="excerpt">
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet . . . </p>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="blog_single.html">How to make sushi</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="blog_single.html#comments">27</a></div>
-                      </div>
-                    </div>
-                    <div class="excerpt">
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet . . . </p>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <!--item-->
-                <div class="entry one-third">
-                  <figure>
-                    <img src="images/img.jpg" alt="" />
-                    <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
-                  </figure>
-                  <div class="container">
-                    <h2><a href="blog_single.html">Make your own bread</a></h2> 
-                    <div class="actions">
-                      <div>
-                        <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
-                        <div class="comments"><i class="fa fa-comment"></i><a href="blog_single.html#comments">27</a></div>
-                      </div>
-                    </div>
-                    <div class="excerpt">
-                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod. Lorem ipsum dolor sit amet . . . </p>
-                    </div>
-                  </div>
-                </div>
-                <!--item-->
-                
-                <div class="quicklinks">
-                  <a href="#" class="button">More posts</a>
-                  <a href="javascript:void(0)" class="button scroll-to-top">Back to top</a>
-                </div>
-              </div>
-              <!--//entries-->
-            </div>
-            <!--//cwrap-->
-          </section>
-          <!--//content-->
       
-        
-          <!--right sidebar-->
-          <aside class="sidebar one-fourth">
-            <div class="widget">
-              <h3>Recipe Categories</h3>
-              <ul class="boxed">
-                <li class="light"><a href="recipes.html" title="Appetizers"><i class="icon icon-themeenergy_pasta"></i> <span>Apetizers</span></a></li>
-                <li class="medium"><a href="recipes.html" title="Cocktails"><i class="icon icon-themeenergy_margarita2"></i> <span>Cocktails</span></a></li>
-                <li class="dark"><a href="recipes.html" title="Deserts"><i class="icon icon-themeenergy_cupcake"></i> <span>Deserts</span></a></li>
-                
-                <li class="medium"><a href="recipes.html" title="Cocktails"><i class="icon icon-themeenergy_eggs"></i> <span>Eggs</span></a></li>
-                <li class="dark"><a href="recipes.html" title="Equipment"><i class="icon icon-themeenergy_blender"></i> <span>Equipment</span></a></li>
-                <li class="light"><a href="recipes.html" title="Events"><i class="icon icon-themeenergy_turkey"></i> <span>Events</span></a></li>
-              
-                <li class="dark"><a href="recipes.html" title="Fish"><i class="icon icon-themeenergy_fish2"></i> <span>Fish</span></a></li>
-                <li class="light"><a href="recipes.html" title="Ftness"><i class="icon icon-themeenergy_biceps"></i> <span>Fitness</span></a></li>
-                <li class="medium"><a href="recipes.html" title="Healthy"><i class="icon icon-themeenergy_apple2"></i> <span>Healthy</span></a></li>
-                
-                <li class="light"><a href="recipes.html" title="Asian"><i class="icon icon-themeenergy_sushi"></i> <span>Asian</span></a></li>
-                <li class="medium"><a href="recipes.html" title="Mexican"><i class="icon icon-themeenergy_peper"></i> <span>Mexican</span></a></li>
-                <li class="dark"><a href="recipes.html" title="Pizza"><i class="icon  icon-themeenergy_pizza-slice"></i> <span>Pizza</span></a></li>
-                
-                <li class="medium"><a href="recipes.html" title="Kids"><i class="icon icon-themeenergy_happy"></i> <span>Kids</span></a></li>
-                <li class="dark"><a href="recipes.html" title="Meat"><i class="icon icon-themeenergy_meat"></i> <span>Meat</span></a></li>
-                <li class="light"><a href="recipes.html" title="Snacks"><i class="icon icon-themeenergy_fried-potatoes"></i> <span>Snacks</span></a></li>
-                
-                <li class="dark"><a href="recipes.html" title="Salads"><i class="icon icon-themeenergy_eggplant"></i> <span>Salads</span></a></li>
-                <li class="light"><a href="recipes.html" title="Storage"><i class="icon icon-themeenergy_soup2"></i> <span>Soups</span></a></li>
-                <li class="medium"><a href="recipes.html" title="Vegetarian"><i class="icon icon-themeenergy_plant-symbol"></i> <span>Vegetarian</span></a></li>
-              </ul>
-            </div>
-              
-            <div class="widget">
-              <h3>Tips and tricks</h3>
-              <ul class="articles_latest">
-                <li>
-                  <a href="blog_single.html">
-                    <img src="images/img.jpg" alt="" />
-                    <h6>How to decorate cookies</h6>
-                  </a>
-                </li>
-                <li>
-                  <a href="blog_single.html">
-                    <img src="images/img.jpg" alt="" />
-                    <h6>Make your own bread</h6>
-                  </a>
-                </li>
-                <li>
-                  <a href="blog_single.html">
-                    <img src="images/img.jpg" alt="" />
-                    <h6>How to make sushi</h6>
-                  </a>
-                </li>
-                <li>
-                  <a href="blog_single.html">
-                    <img src="images/img.jpg" alt="" />
-                    <h6>Barbeque party</h6>
-                  </a>
-                </li>
-                <li>
-                  <a href="blog_single.html">
-                    <img src="images/img.jpg" alt="" />
-                    <h6>How to make a cheesecake</h6>
-                  </a>
-                </li>
-              </ul>
-            </div>
-              
-            <div class="widget members">
-              <h3>Our members</h3>
-              <div id="members-list-options" class="item-options">
-                <a href="#">Newest</a>
-                <a class="selected" href="#">Active</a>
-                <a href="#">Popular</a>
-              </div>
-              <ul class="boxed">
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Kimberly C.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Alex J.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Denise M.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Jason H.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Jennifer W.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Anabelle Q.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Thomas M.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Michelle S.</span></a></div></li>
-                <li><div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /><span>Bryan A.</span></a></div></li>
-              </ul>
-            </div>
-              
-            <div class="widget">
-              <h3>Advertisment</h3>
-              <a href="#"><img src="images/advertisment.jpg" alt="" /></a>
-            </div>
-          </aside>
-        </div>
-        <!--//right sidebar-->
-      </div>
-      <!--//wrap-->
-    </main>
-    <!--//main-->
-    
-    <!--call to action-->
-    <section class="cta">
-      <div class="wrap clearfix">
-        <a href="http://themeforest.net/item/socialchef-social-recipe-html-template/8568727?ref=themeenergy" class="button big white right">Purchase theme</a>
-        <h2>Already convinced? This is a call to action section lorem ipsum dolor sit amet.</h2>
-      </div>
     </section>
     <!--//call to action-->
 
@@ -707,32 +190,6 @@
           </section>
           <!--//content-->
           <!--right sidebar-->
-          <aside class="sidebar one-fourth">
-            <div class="widget">
-              <ul class="categories right">
-                <li class="active"><a href="#">All recipes</a></li>
-                <li><a href="#">Apetizers</a></li>
-                <li><a href="#">Cocktails</a></li>
-                <li><a href="#">Deserts</a></li>
-                <li><a href="#">Eggs</a></li>
-                <li><a href="#">Equipment</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Fish</a></li>
-                <li><a href="#">Fitness</a></li>
-                <li><a href="#">Healthy</a></li>
-                <li><a href="#">Asian</a></li>
-                <li><a href="#">Mexican</a></li>
-                <li><a href="#">Pizza</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Meat</a></li>
-                <li><a href="#">Snacks</a></li>
-                <li><a href="#">Salads</a></li>
-                <li><a href="#">Storage</a></li>
-                <li><a href="#">Vegetarian</a></li>
-              </ul>
-            </div>
-                        
-          </aside>
           <!--//right sidebar-->
         </div>
         <!--//row-->
@@ -845,7 +302,6 @@
     <!--//wrap-->
   </main>
   <!--//main-->
-
 </template>
 
 
@@ -1049,7 +505,6 @@
 
                 <div class="actions">
                   <div>
-                    <a href="#" class="btn btn-primary" v-on:click="setCurrentRecipe(recipe)" data-toggle="modal" data-target="#exampleModal">More info</a>
                     <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
                     <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
                     <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
@@ -1097,6 +552,7 @@
         <header class="s-title">
           <h1>{{recipe.recipe.label}}</h1>
         </header>
+
         <!--content-->
         <section class="content three-fourth">
           <!--recipe-->
@@ -1107,7 +563,7 @@
                   <div class="image">   <img v-bind:src="recipe.recipe.image" alt="" /> </div>
                 </article>
                 <!--//two-third-->
-              <h2> For directions to refer to this page <a>{{recipe.recipe.url}} </h2></a>
+              <h3> For directions to refer to this page <a>{{recipe.recipe.url}} </h3></a>
 
                 <!--one-third-->
                 <article class="one-third">
@@ -1115,32 +571,18 @@
                     <dd>4 people</dd>
                   </dl>
                   
-                  <dl class="user">
-                    <dt>Category</dt>
-                    <dd>Deserts</dd>
-                    <dt>Posted by</dt>
-                    <dd>Jennifer W.</dd>
-                  </dl>
+                 
                   
-                  <dl class="ingredients">
-                    <dt>300g</dt>
-                    <dd>{{recipe.recipe.ingredients[0]}}
-</dd>
-                    <dt>200g</dt>
-                    <dd>Butter</dd>
-                    <dt>200g</dt>
-                    <dd>Plain chocolate</dd>
-                    <dt>2</dt>
-                    <dd>Eggs</dd>
-                    <dt>1 tbsp</dt>
-                    <dd>Vanilla extract</dd>
-                    <dt>200 g</dt>
-                    <dd>Brown sugar</dd>
-                    <dt>100 ml</dt>
-                    <dd>Double cream</dd>
-                    <dt>handful</dt>
-                    <dd>Sprinkles</dd>
-                  </dl>
+                  <div class="comment-text">
+                    <h1> Ingredients </h1>
+                      <div v-for="ingredient in recipe.recipe.ingredients">
+                      <dd class="truncate">{{ingredient.text}}</dd>
+
+
+                      </div>
+
+
+                    </div>
                 </article>
                 <!--//one-third-->
               </div>
@@ -1152,40 +594,13 @@
         
         <!--right sidebar-->
         <aside class="sidebar one-fourth">
-          <div class="widget nutrition">
+          <div class="widget nutrition"  >
             <h3>Nutrition facts <span>(per serving)</span></h3>
-            <table>
+            <table v-for="totalNutrient in recipe.recipe.totalNutrients">
               <tr>
-                <td>Calories </td>
-                <td>505</td>
-              </tr>
-              <tr>
-                <td>Protein</td>
-                <td>59g</td>
-              </tr>
-              <tr>
-                <td>Carbs</td>
-                <td>59g</td>
-              </tr>
-              <tr>
-                <td>Fat</td>
-                <td>29g</td>
-              </tr>
-              <tr>
-                <td>Saturates</td>
-                <td>17g</td>
-              </tr>
-              <tr>
-                <td>Fibre</td>
-                <td>2g</td>
-              </tr>
-              <tr>
-                <td>Sugar</td>
-                <td>44g</td>
-              </tr>
-              <tr>
-                <td>Salt</td>
-                <td>0.51g</td>
+                <td>{{totalNutrient.label}} </td>
+                <td>{{totalNutrient.quantity}}</td>
+              
               </tr>
             </table>
           </div>

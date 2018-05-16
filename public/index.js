@@ -46,7 +46,7 @@ var RecipesCreatePage = {
       };
       axios
         .post("/v1/recipes", params)
-        .then (function(response) {
+        .then(function(response) {
           console.log("created recipe", response);
           router.push("/");
 
@@ -151,11 +151,12 @@ var RecipesShowPage = {
   data: function() {
     return {
       recipe: {},
+      
 
     };
   },
   created: function() {
-    console.log("RecipesShowPage created")
+    console.log("RecipesShowPage created");
     // axios.get("/v1/recipes_show?recipe_url=" + this.$route.query.recipe_url).then(
     //   function(response) {
     //     this.recipe = response.data;
@@ -165,7 +166,9 @@ var RecipesShowPage = {
     this.recipe = JSON.parse(localStorage.getItem("recipe"));
     console.log('recipe', this.recipe);
   },
-  methods: {},
+  methods: {
+
+  },
   computed: {}
 };
 
@@ -230,7 +233,7 @@ var router = new VueRouter({
     { path: "/recipes", component: RecipesIndexPage },
     { path: "/recipes_show", component: RecipesShowPage },
     { path: "/create_recipes", component: RecipesCreatePage},
-    { path: "/login", cxomponent: LoginPage },
+    { path: "/login", component: LoginPage },
     { path: "/logout", component: LogoutPage },
     { path: "/fridge_create", component: FridgeItemCreatePage},
     { path: "/fridge_index", component: FridgeIndexPage },
