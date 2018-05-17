@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     patch "/ingredients/:id" => "ingredients#update"
     delete "/ingredients/:id" => "ingredients#destroy"
 
+    get "/fridge_items" => "fridge_items#index"
     post "/fridge_items" => "fridge_items#create"
     get "/fridge_items/:id" => "fridge_items#show"
     patch "/fridge_items/:id" => "fridge_items#update"

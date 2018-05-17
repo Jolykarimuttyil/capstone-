@@ -132,13 +132,13 @@ var FridgeIndexPage = {
   template: "#recipes-index-page",
   data: function() {
     return {
-      fridgeItems: [],
+      fridge_item: [],
     };
   },
   created: function() {
     axios.get("v1/fridge_items").then(
       function(response) {
-        this.recipes = response.data;
+        this.fridge_item = response.data;
       }.bind(this)
     );
   },
@@ -204,9 +204,14 @@ var RecipesSearchPage = {
         max_calories: this.max_calories || 1000,
         max_ingredients: this.max_ingredients || 50,
         excluded: this.excluded 
+
       };
       if (this.diet_restrictions) {
         params.diet_restrictions = this.diet_restrictions;
+
+        
+      
+
       }
       axios
         .get("/v1/recipes_search", {params: params})

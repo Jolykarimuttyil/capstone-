@@ -47,6 +47,8 @@
           </li>
           <li><a href="http://localhost:3000/#/logout" title="Logout"><span>Logout</span></a>
           </li>
+          <li><a href="http://localhost:3000/#/fridge_create" title="fridge_create"><span>Add fridge item</span></a>
+          </li>
           </nav>
         
         
@@ -369,14 +371,14 @@
         <nav class="breadcrumbs">
           <ul>
             <li><a href="index.html" title="Home">Home</a></li>
-            <li>Recipes</li>
+            <li>Fridge items</li>
           </ul>
         </nav>
         <!--//breadcrumbs-->
         <!--row-->
         <div class="row">
           <header class="s-title">
-            <h1>Recipes</h1>
+            <h1>Fridge items</h1>
           </header>
           <!--content-->
           <section class="content three-fourth">
@@ -384,14 +386,14 @@
             <div class="entries row">
 
               <!--item-->
-              <div class="entry one-third" v-for="fridge_item in fridge_items">
+              <div class="entry one-third">
                 <figure>
                   <img src="images/img.jpg" alt="" />
                   <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
                 </figure>
-                <div class="container">
+                <div class="container" v-for="fridge_items in fridge_item">
                   
-                  <h2><a href="recipe.html">{{ fridge_items.name }}</a></h2> 
+                  <h2>{{ fridge_item.name }}</h2> 
                   <div>
                   <div class="actions">
                     <div>
@@ -483,12 +485,13 @@
                   <input type="search" placeholder="Calories Max per serving" v-model="max_calories" />
                   <input type="search" placeholder="Number of ingredients" v-model="max_ingredients" />
                   <input type="search" placeholder="exclude ingredients" v-model="excluded" />
-                  <input type="search" placeholder="Diet restrictions" />
+                  <input type="search" placeholder="Diet restrictions" v-model="diet_restrictions"/>
                   <button class="btn btn-primary" v-on:click="submit()">Submit</button>
                 </div>
               </div>
             </div>
           </div>
+
           <!--//recipefinder-->
         
           <!--results-->
@@ -505,6 +508,8 @@
 
                 <div class="actions">
                   <div>
+                    <h5> Total Calories {{parseInt(recipe.recipe.calories)}}</h5>
+                   <h5>  Serves {{recipe.recipe.yield}} people </h5>
                     <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
                     <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
                     <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
@@ -563,15 +568,14 @@
                   <div class="image">   <img v-bind:src="recipe.recipe.image" alt="" /> </div>
                 </article>
                 <!--//two-third-->
-              <h3> For directions to refer to this page <a>{{recipe.recipe.url}} </h3></a>
+
 
                 <!--one-third-->
                 <article class="one-third">
+                  <h3> <a v-bind:href="recipe.recipe.url" target="_blank">Click here for complete directions</a></h3>
                     <dt>Serves</dt>
-                    <dd>4 people</dd>
+                    <dd>{{recipe.recipe.yield}} people</dd>
                   </dl>
-                  
-                 
                   
                   <div class="comment-text">
                     <h1> Ingredients </h1>
@@ -593,7 +597,7 @@
         <!--//content-->
         
         <!--right sidebar-->
-        <aside class="sidebar one-fourth">
+        <aside class="sidebar one-half">
           <div class="widget nutrition"  >
             <h3>Nutrition facts <span>(per serving)</span></h3>
             <table v-for="totalNutrient in recipe.recipe.totalNutrients">
