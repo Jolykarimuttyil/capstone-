@@ -46,7 +46,7 @@ class V1::RecipesController < ApplicationController
   def api_search
     # response =  Unirest.get("https://api.edamam.com/search?q=#{params[:ingredients]}&app_id=c2e953ab&app_key=28bae3bac65b4eb1f5e5a7ab4989ae11&from=0&to=12&calories=#{params[:min_calories]}-#{params[:max_calories]}&health=#{params[:diet_restrictions]}&ingr=#{params[:max_ingredients]}&excluded=#{params[:excluded]}")
 
-    url = "https://api.edamam.com/search?q=#{params[:ingredients]}&app_id=c2e953ab&app_key=28bae3bac65b4eb1f5e5a7ab4989ae11&from=0&to=12&calories=#{params[:min_calories]}-#{params[:max_calories]}&ingr=#{params[:max_ingredients]}&excluded=#{params[:excluded]}"
+    url = "https://api.edamam.com/search?q=#{params[:ingredients]}&app_id=c2e953ab&app_key=28bae3bac65b4eb1f5e5a7ab4989ae11&from=0&to=8&calories=#{params[:min_calories]}-#{params[:max_calories]}&ingr=#{params[:max_ingredients]}&excluded=#{params[:excluded]}"
 
     if params[:diet_restrictions]
       url += "&health=#{params[:diet_restrictions]}"

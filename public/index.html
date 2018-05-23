@@ -39,15 +39,15 @@
     <header class="head" role="banner">
       <!--wrap-->
       <div class="wrap clearfix">
-        <a href="http://localhost:3000/#/" title="CookMore" class="logo"><img src="images/ico/logo.png" alt="SocialChef logo" /></a>
+        <a href="/" title="CookMore" class="logo"><img src="images/ico/logo.png" alt="SocialChef logo" /></a>
         <nav class="main-nav" role="navigation" id="menu">
         <ul>
-          <li><a href="http://localhost:3000/#/login" title="Login"><span>Login</span></a></li>
+          <li><a href="/#/login" title="Login"><span>Login</span></a></li>
           <li><a href="recipes.html" title="Signup"><span>Sign Up</span></a>   
           </li>
-          <li><a href="http://localhost:3000/#/logout" title="Logout"><span>Logout</span></a>
+          <li><a href="/#/logout" title="Logout"><span>Logout</span></a>
           </li>
-          <li><a href="http://localhost:3000/#/fridge_create" title="fridge_create"><span>Add fridge item</span></a>
+          <li><a href="/#/fridge_create" title="fridge_create"><span>Add fridge item</span></a>
           </li>
           </nav>
         
@@ -56,9 +56,9 @@
         
         <nav class="user-nav" role="navigation">
           <ul>
-            <li class="light"><a href="http://localhost:3000/#/recipes_search" title="Search for recipes"><i class="icon icon-themeenergy_search"></i> <span>Search for recipes</span></a></li>
+            <li class="light"><a href="/#/recipes_search" title="Search for recipes"><i class="icon icon-themeenergy_search"></i> <span>Search for recipes</span></a></li>
             
-            <li class="dark"><a href="http://localhost:3000/#/create_recipes" title="Submit a recipe"><i class="icon icon-themeenergy_fork-spoon"></i> <span>Submit a recipe</span></a></li>
+            <li class="dark"><a href="/#/create_recipes" title="Submit a recipe"><i class="icon icon-themeenergy_fork-spoon"></i> <span>Submit a recipe</span></a></li>
           </ul>
         </nav>
       </div>
@@ -599,11 +599,12 @@
         <!--right sidebar-->
         <aside class="sidebar one-half">
           <div class="widget nutrition"  >
-            <h3>Nutrition facts <span>(per serving)</span></h3>
+            <h3>Nutrition facts <span>(Total)</span></h3>
             <table v-for="totalNutrient in recipe.recipe.totalNutrients">
               <tr>
                 <td>{{totalNutrient.label}} </td>
-                <td>{{totalNutrient.quantity}}</td>
+                <td>{{parseInt(totalNutrient.quantity)}} {{totalNutrient.unit}}</td>
+
               
               </tr>
             </table>
