@@ -61,8 +61,8 @@ var LoginPage = {
   template: "#login-page",
   data: function() {
     return {
-      email: "joe@email.com",
-      password: "password",
+      email: "",
+      password: "",
       errors: []
     };
   },
@@ -224,6 +224,38 @@ var RecipesSearchPage = {
   },
 };
 
+var SignupPage = {
+  template: "#signup-page",
+  data: function() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirmation: "",
+      errors: []
+    };
+  },
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.passwordConfirmation
+      };
+      axios
+        .post("/v1/users", params)
+        .then(function(response) {
+          router.push("/login");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+          }.bind(this)
+        );
+    }
+  }
+};
 
 
 
@@ -239,6 +271,7 @@ var router = new VueRouter({
     { path: "/recipes_show", component: RecipesShowPage },
     { path: "/create_recipes", component: RecipesCreatePage},
     { path: "/login", component: LoginPage },
+    { path: "/signup", component: SignupPage },
     { path: "/logout", component: LogoutPage },
     { path: "/fridge_create", component: FridgeItemCreatePage},
     { path: "/fridge_index", component: FridgeIndexPage },

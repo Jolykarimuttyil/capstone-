@@ -43,7 +43,7 @@
         <nav class="main-nav" role="navigation" id="menu">
         <ul>
           <li><a href="/#/login" title="Login"><span>Login</span></a></li>
-          <li><a href="recipes.html" title="Signup"><span>Sign Up</span></a>   
+          <li><a href="/#/signup" title="Signup"><span>Sign Up</span></a>   
           </li>
           <li><a href="/#/logout" title="Logout"><span>Logout</span></a>
           </li>
@@ -294,7 +294,7 @@
               <button class="btn btn-primary" v-on:click="submit()">Submit</button>
             </div>
             <p><a href="#">Forgotten password?</a></p>
-            <p>Dont have an account yet? <a href="register.html">Sign up.</a></p>
+            <p>Dont have an account yet? <a href="/#/signup">Sign up.</a></p>
           </div>
         </section>
         <!--//content-->
@@ -618,6 +618,43 @@
     <!--//wrap-->
   </main>
   <!--//main-->
+</template>
 
-
+<template id="signup-page">
+  <!--main-->
+  <main class="main" role="main">
+    <!--wrap-->
+    <div class="wrap clearfix">
+      <!--row-->
+      <div class="row">
+      <!--content-->
+        <section class="content center full-width">
+          <div class="modal container">
+            <h3>Register</h3>
+            <div class="f-row">
+              <input type="text" placeholder="Your name" v-model="name" />
+            </div>
+            <div class="f-row">
+              <input type="email" placeholder="Your email" v-model="email" />
+            </div>
+            <div class="f-row">
+              <input type="password" placeholder="Your password" v-model="password"/>
+            </div>
+            <div class="f-row">
+              <input type="password" placeholder="Retype password" v-model="passwordConfirmation"/>
+            </div>
+            
+            <div class="f-row bwrap">
+              <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+            </div>
+            <p>Already have an account yet? <a href="/#/login">Log in.</a></p>
+          </div>
+        </section>
+        <!--//content-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//wrap-->
+  </main>
+  <!--//main-->
 </template>
